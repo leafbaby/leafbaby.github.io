@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>How To Make A Theme | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="看见辣么多大神都在GitHub上分享自己的主题，也有很多很不错的主题被使用，那么该如何写一个属于自己的主题呢？OK，先来下载一个神器，叫做hexo 的theme结构生成器在这里一定要注意啊，这里面安装步骤我在执行的时候有坑，所以在考虑全局还是本地安装慎重啊这个神器安装好你就发现你刚刚创建的文件夹，里面有接下来让我们先看看它是什么样的，ok，修改你的_config.yml里的theme属性为你刚刚创">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How To Make A Theme">
+<meta property="og:url" content="http://yoursite.com/2016/10/11/How-To-Make-A-Theme/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="看见辣么多大神都在GitHub上分享自己的主题，也有很多很不错的主题被使用，那么该如何写一个属于自己的主题呢？OK，先来下载一个神器，叫做hexo 的theme结构生成器在这里一定要注意啊，这里面安装步骤我在执行的时候有坑，所以在考虑全局还是本地安装慎重啊这个神器安装好你就发现你刚刚创建的文件夹，里面有接下来让我们先看看它是什么样的，ok，修改你的_config.yml里的theme属性为你刚刚创">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/86ef75e8jw1f8ocq1dxdjj20m003sjrd.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/86ef75e8jw1f8ocq1dxdjj20m003sjrd.jpg">
+<meta property="og:updated_time" content="2016-10-11T08:15:30.733Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How To Make A Theme">
+<meta name="twitter:description" content="看见辣么多大神都在GitHub上分享自己的主题，也有很多很不错的主题被使用，那么该如何写一个属于自己的主题呢？OK，先来下载一个神器，叫做hexo 的theme结构生成器在这里一定要注意啊，这里面安装步骤我在执行的时候有坑，所以在考虑全局还是本地安装慎重啊这个神器安装好你就发现你刚刚创建的文件夹，里面有接下来让我们先看看它是什么样的，ok，修改你的_config.yml里的theme属性为你刚刚创">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/mw690/86ef75e8jw1f8ocq1dxdjj20m003sjrd.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-How-To-Make-A-Theme" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/11/How-To-Make-A-Theme/" class="article-date">
+  <time datetime="2016-10-11T06:55:51.000Z" itemprop="datePublished">2016-10-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      How To Make A Theme
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>看见辣么多大神都在GitHub上分享自己的主题，也有很多很不错的主题被使用，那么该如何写一个属于自己的主题呢？<br>OK，先来下载一个神器，叫做<a href="https://github.com/tcrowe/generator-hexo-theme" target="_blank" rel="external">hexo 的theme结构生成器</a><br>在这里一定要注意啊，这里面安装步骤我在执行的时候有坑，所以在考虑全局还是本地安装慎重啊<br>这个神器安装好你就发现你刚刚创建的文件夹，里面有<img src="http://ww4.sinaimg.cn/mw690/86ef75e8jw1f8ocq1dxdjj20m003sjrd.jpg" alt="image"><br>接下来让我们先看看它是什么样的，ok，修改你的<code>_config.yml</code>里的<code>theme</code>属性为你刚刚创建的主题名<br><code>$ hexo g</code><br><code>$ hexo s</code><br><a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a><br><img src="http://ww4.sinaimg.cn/mw690/86ef75e8jw1f8ocq1dxdjj20m003sjrd.jpg" alt="image2"><br>请不要嫌弃它，接下来咱开始了解它的编码方式<br>当我第一次看到ejs文件我真的傻眼了，这尼玛什么鬼，我还是个只会HTML，CSS，和一部分JavaScript的小萌新啊<br>好吧科普一下<code>EJS是一个JavaScript模板库，用来从JSON数据中生成HTML字符串。</code><br>            <code>它可以把数据和模板合并生成HTML文本。</code><br><a href="http://www.oschina.net/p/ejs" target="_blank" rel="external">JavaScript 模板引擎 EJS</a>这是开源的下载地址<br>安装：<code>$npm install ejs</code><br>我没有安装，因为github默认就是这个，只是编主题必须用这个，得了解一下<br>好了，了解清楚就到<code>source-css-主题名.styl</code>里面编写CSS样式吧，还有js都写一写，这个很费功夫，慢慢来吧</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/11/How-To-Make-A-Theme/" data-id="ciu56gohj0000o4uz098pqbcu" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/10/11/How-do-I-create-own-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">How do I create own blog</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/11/How-To-Make-A-Theme/">How To Make A Theme</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/11/How-do-I-create-own-blog/">How do I create own blog</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/10/bobo/">bobo</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/10/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

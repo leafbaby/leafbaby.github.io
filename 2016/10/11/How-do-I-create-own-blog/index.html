@@ -3,14 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>How do I create own blog | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="我是如何创建一个属于自己的博客的首先是你需要下载的工具PS：如果下载过慢就自己翻墙吧git下载: gitNode.js下载: Node.jssublime: sublime别的编辑器也可以，例如在线编辑器MaHua
+OK,开始搭建自己的博客吧！1.首先你得有自己的github，去注册一个吧！github2.我们要使用Github Pages搭建博客，具体操作3.配置SSH Keys，打开git B">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How do I create own blog">
+<meta property="og:url" content="http://yoursite.com/2016/10/11/How-do-I-create-own-blog/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="我是如何创建一个属于自己的博客的首先是你需要下载的工具PS：如果下载过慢就自己翻墙吧git下载: gitNode.js下载: Node.jssublime: sublime别的编辑器也可以，例如在线编辑器MaHua
+OK,开始搭建自己的博客吧！1.首先你得有自己的github，去注册一个吧！github2.我们要使用Github Pages搭建博客，具体操作3.配置SSH Keys，打开git B">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/86ef75e8jw1f8o3o3ek7fj20hj0e8t96.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/86ef75e8jw1f8o4xf5evdj20fb0ao74a.jpg">
+<meta property="og:updated_time" content="2016-10-11T07:39:22.383Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="How do I create own blog">
+<meta name="twitter:description" content="我是如何创建一个属于自己的博客的首先是你需要下载的工具PS：如果下载过慢就自己翻墙吧git下载: gitNode.js下载: Node.jssublime: sublime别的编辑器也可以，例如在线编辑器MaHua
+OK,开始搭建自己的博客吧！1.首先你得有自己的github，去注册一个吧！github2.我们要使用Github Pages搭建博客，具体操作3.配置SSH Keys，打开git B">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/86ef75e8jw1f8o3o3ek7fj20hj0e8t96.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,46 +69,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-How-To-Make-A-Theme" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/11/How-To-Make-A-Theme/" class="article-date">
-  <time datetime="2016-10-11T06:55:51.000Z" itemprop="datePublished">2016-10-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/11/How-To-Make-A-Theme/">How To Make A Theme</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>看见辣么多大神都在GitHub上分享自己的主题，也有很多很不错的主题被使用，那么该如何写一个属于自己的主题呢？<br>OK，先来下载一个神器，叫做<a href="https://github.com/tcrowe/generator-hexo-theme" target="_blank" rel="external">hexo 的theme结构生成器</a><br>在这里一定要注意啊，这里面安装步骤我在执行的时候有坑，所以在考虑全局还是本地安装慎重啊<br>这个神器安装好你就发现你刚刚创建的文件夹，里面有<img src="http://ww4.sinaimg.cn/mw690/86ef75e8jw1f8ocq1dxdjj20m003sjrd.jpg" alt="image"><br>接下来让我们先看看它是什么样的，ok，修改你的<code>_config.yml</code>里的<code>theme</code>属性为你刚刚创建的主题名<br><code>$ hexo g</code><br><code>$ hexo s</code><br><a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a><br><img src="http://ww4.sinaimg.cn/mw690/86ef75e8jw1f8ocq1dxdjj20m003sjrd.jpg" alt="image2"><br>请不要嫌弃它，接下来咱开始了解它的编码方式<br>当我第一次看到ejs文件我真的傻眼了，这尼玛什么鬼，我还是个只会HTML，CSS，和一部分JavaScript的小萌新啊<br>好吧科普一下<code>EJS是一个JavaScript模板库，用来从JSON数据中生成HTML字符串。</code><br>            <code>它可以把数据和模板合并生成HTML文本。</code><br><a href="http://www.oschina.net/p/ejs" target="_blank" rel="external">JavaScript 模板引擎 EJS</a>这是开源的下载地址<br>安装：<code>$npm install ejs</code><br>我没有安装，因为github默认就是这个，只是编主题必须用这个，得了解一下<br>好了，了解清楚就到<code>source-css-主题名.styl</code>里面编写CSS样式吧，还有js都写一写，这个很费功夫，慢慢来吧</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/11/How-To-Make-A-Theme/" data-id="ciu56gohj0000o4uz098pqbcu" class="article-share-link">Delen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-How-do-I-create-own-blog" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-How-do-I-create-own-blog" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/11/How-do-I-create-own-blog/" class="article-date">
   <time datetime="2016-10-11T00:44:55.000Z" itemprop="datePublished">2016-10-11</time>
@@ -111,8 +82,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/11/How-do-I-create-own-blog/">How do I create own blog</a>
+    <h1 class="article-title" itemprop="name">
+      How do I create own blog
     </h1>
   
 
@@ -136,91 +107,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-bobo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/10/bobo/" class="article-date">
-  <time datetime="2016-10-10T07:24:01.000Z" itemprop="datePublished">2016-10-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2016/10/11/How-To-Make-A-Theme/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/10/bobo/">bobo</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+          How To Make A Theme
         
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/10/bobo/" data-id="ciu56gohs0001o4uzfkbic4mz" class="article-share-link">Delen</a>
-      
-      
-    </footer>
-  </div>
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/10/bobo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">bobo</div>
+    </a>
+  
+</nav>
+
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/10/hello-world/" class="article-date">
-  <time datetime="2016-10-10T06:51:48.615Z" itemprop="datePublished">2016-10-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/10/hello-world/" data-id="ciu56goi30003o4uzv1g0ymbz" class="article-share-link">Delen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         
