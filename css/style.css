@@ -1372,3 +1372,12 @@ pre .javascript .function {
   margin-right: 5px;
   display: inline-block;
 }
+.widget-weibo {
+  color: #777;
+  text-shadow: 0 1px #fff;
+  background: #ddd;
+  -webkit-box-shadow: 0 -1px 4px #ccc inset;
+  box-shadow: 0 -1px 4px #ccc inset;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
