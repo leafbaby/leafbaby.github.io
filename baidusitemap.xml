@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/10/12/%E8%BF%99%E5%8F%AA%E6%98%AF%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2016-10-12T07:45:30.136Z</lastmod>
+    <data>
+        <display>
+        <title>测试HTML代码</title>
+        <pubTime>2016-10-12T00:11:01.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/10/11/How-do-I-create-own-blog/</loc>
+    <lastmod>2016-10-12T02:27:05.491Z</lastmod>
+    <data>
+        <display>
+        <title>How do I create own blog</title>
+        <pubTime>2016-10-11T00:44:55.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/10/11/How-To-Make-A-Theme/</loc>
+    <lastmod>2016-10-11T08:15:30.733Z</lastmod>
+    <data>
+        <display>
+        <title>How To Make A Theme</title>
+        <pubTime>2016-10-11T06:55:51.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/10/10/hello-world/</loc>
+    <lastmod>2016-10-11T00:16:52.701Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2016-10-10T06:51:48.615Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+</urlset>

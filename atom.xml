@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-12T00:51:25.797Z</updated>
+  <updated>2016-10-12T07:45:30.136Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,16 +20,24 @@
     <link href="http://yoursite.com/2016/10/12/%E8%BF%99%E5%8F%AA%E6%98%AF%E6%B5%8B%E8%AF%95/"/>
     <id>http://yoursite.com/2016/10/12/这只是测试/</id>
     <published>2016-10-12T00:11:01.000Z</published>
-    <updated>2016-10-12T00:51:25.797Z</updated>
+    <updated>2016-10-12T07:45:30.136Z</updated>
     
     <content type="html"><![CDATA[<p>Markdown代码测试之如何优化你的GitHub-README</p>
-<p></p><p>这是一个普通的表格代码</p><br>&lt;table&gt;&lt;tr&gt;&lt;td&gt;表格内容&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<p></p>
-<table><tbody><tr><td>表格内容</td></tr></tbody></table>]]></content>
+<p>这是一个普通的表格代码</p>
+
+<table><tbody><tr><td>表格内容代码如下：</td></tr></tbody></table>
+
+<pre><code>&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;表格内容&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+</code></pre>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;Markdown代码测试之如何优化你的GitHub-README&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;&lt;p&gt;这是一个普通的表格代码&lt;/p&gt;&lt;br&gt;&amp;lt;table&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;表格内容&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/table&amp;g
+&lt;p&gt;这是一个普通的表格代码&lt;/p&gt;
+
+&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;表格内容代码如下：&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;table&amp;
     
     </summary>
     
