@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-10-12T00:51:25.797Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试HTML代码</title>
+    <link href="http://yoursite.com/2016/10/12/%E8%BF%99%E5%8F%AA%E6%98%AF%E6%B5%8B%E8%AF%95/"/>
+    <id>http://yoursite.com/2016/10/12/这只是测试/</id>
+    <published>2016-10-12T00:11:01.000Z</published>
+    <updated>2016-10-12T00:51:25.797Z</updated>
+    
+    <content type="html"><![CDATA[<p>Markdown代码测试之如何优化你的GitHub-README</p>
+<p></p><p>这是一个普通的表格代码</p><br>&lt;table&gt;&lt;tr&gt;&lt;td&gt;表格内容&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<p></p>
+<table><tbody><tr><td>表格内容</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Markdown代码测试之如何优化你的GitHub-README&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;这是一个普通的表格代码&lt;/p&gt;&lt;br&gt;&amp;lt;table&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;表格内容&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/table&amp;g
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>How To Make A Theme</title>
+    <link href="http://yoursite.com/2016/10/11/How-To-Make-A-Theme/"/>
+    <id>http://yoursite.com/2016/10/11/How-To-Make-A-Theme/</id>
+    <published>2016-10-11T06:55:51.000Z</published>
+    <updated>2016-10-11T08:15:30.733Z</updated>
+    
+    <content type="html"><![CDATA[<p>看见辣么多大神都在GitHub上分享自己的主题，也有很多很不错的主题被使用，那么该如何写一个属于自己的主题呢？<br>OK，先来下载一个神器，叫做<a href="https://github.com/tcrowe/generator-hexo-theme" target="_blank" rel="external">hexo 的theme结构生成器</a><br>在这里一定要注意啊，这里面安装步骤我在执行的时候有坑，所以在考虑全局还是本地安装慎重啊<br>这个神器安装好你就发现你刚刚创建的文件夹，里面有<img src="http://ww4.sinaimg.cn/mw690/86ef75e8jw1f8ocq1dxdjj20m003sjrd.jpg" alt="image"><br>接下来让我们先看看它是什么样的，ok，修改你的<code>_config.yml</code>里的<code>theme</code>属性为你刚刚创建的主题名<br><code>$ hexo g</code><br><code>$ hexo s</code><br><a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a><br><img src="http://ww4.sinaimg.cn/mw690/86ef75e8jw1f8ocq1dxdjj20m003sjrd.jpg" alt="image2"><br>请不要嫌弃它，接下来咱开始了解它的编码方式<br>当我第一次看到ejs文件我真的傻眼了，这尼玛什么鬼，我还是个只会HTML，CSS，和一部分JavaScript的小萌新啊<br>好吧科普一下<code>EJS是一个JavaScript模板库，用来从JSON数据中生成HTML字符串。</code><br>            <code>它可以把数据和模板合并生成HTML文本。</code><br><a href="http://www.oschina.net/p/ejs" target="_blank" rel="external">JavaScript 模板引擎 EJS</a>这是开源的下载地址<br>安装：<code>$npm install ejs</code><br>我没有安装，因为github默认就是这个，只是编主题必须用这个，得了解一下<br>好了，了解清楚就到<code>source-css-主题名.styl</code>里面编写CSS样式吧，还有js都写一写，这个很费功夫，慢慢来吧</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;看见辣么多大神都在GitHub上分享自己的主题，也有很多很不错的主题被使用，那么该如何写一个属于自己的主题呢？&lt;br&gt;OK，先来下载一个神器，叫做&lt;a href=&quot;https://github.com/tcrowe/generator-hexo-theme&quot; target=
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>How do I create own blog</title>
+    <link href="http://yoursite.com/2016/10/11/How-do-I-create-own-blog/"/>
+    <id>http://yoursite.com/2016/10/11/How-do-I-create-own-blog/</id>
+    <published>2016-10-11T00:44:55.000Z</published>
+    <updated>2016-10-12T02:27:05.491Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>
+<h1 id="我是如何创建一个属于自己的博客的"><a href="#我是如何创建一个属于自己的博客的" class="headerlink" title="我是如何创建一个属于自己的博客的"></a>我是如何创建一个属于自己的博客的</h1><h2 id="首先是你需要下载的工具"><a href="#首先是你需要下载的工具" class="headerlink" title="首先是你需要下载的工具"></a>首先是你需要下载的工具</h2><p>PS：如果下载过慢就自己翻墙吧<br>git下载: <a href="https://git-scm.com/download/" target="_blank" rel="external">git</a><br>Node.js下载: <a href="http://nodejs.cn/" target="_blank" rel="external">Node.js</a><br>sublime: <a href="http://www.sublimetext.com/2" target="_blank" rel="external">sublime</a><br>别的编辑器也可以，例如在线编辑器<a href="http://mahua.jser.me/" target="_blank" rel="external">MaHua</a></p>
+<h2 id="OK-开始搭建自己的博客吧！"><a href="#OK-开始搭建自己的博客吧！" class="headerlink" title="OK,开始搭建自己的博客吧！"></a>OK,开始搭建自己的博客吧！</h2><p>1.首先你得有自己的github，去注册一个吧！<a href="https://github.com/" target="_blank" rel="external">github</a><br>2.我们要使用Github Pages搭建博客，具体操作<br><img src="http://ww1.sinaimg.cn/mw690/86ef75e8jw1f8o3o3ek7fj20hj0e8t96.jpg" alt="image"><br>3.配置SSH Keys，打开git Bash工具<br>首先检查一下你有木有ssh key<code>$ cd ~/. ssh</code><br>如果不显示什么，证明你之前已经存在key文件，你需要备份删除<br><code>$ ls</code><br><code>$ mkdir key_backup</code><br><code>$ cp id_rsa* key_backup</code><br><code>$ rm id_rsa*</code><br>如果显示“No such file or directory”证明你没有，需要生成一个<br><code>$ ssh-keygen -t rsa -C &quot;自己的邮箱地址，例如 xx@163.com &quot;</code><br><code>Generating public/private rsa key pair.</code><br><code>Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):</code><br>这里他问你ssh密钥保存的路径，直接回车就行<br><code>Enter passphrase (empty for no passphrase):&lt;输入密码&gt;</code><br><code>Enter same passphrase again:&lt;再次输入密码&gt;</code><br><strong>密码一定要记住，而且输入密码不会显示星号哦</strong><br>4.把生成的ssh key添加到Github上去，我添加的公钥<br>具体操作 Settings–Deploy keys–Add deploy key<br>那个ssh key在C盘的User目录下，每个人的存储路径不一样，直接搜索 id_rsa.pub 文件就行<br>用编辑器打开这个文件，复制这里面的内容到key文本框<br><img src="http://ww3.sinaimg.cn/mw690/86ef75e8jw1f8o4xf5evdj20fb0ao74a.jpg" alt="dep"><br>5.现在可以测试了<br><code>$ ssh -T git@github.com</code><br><code>The authenticity of host &#39;github.com (207.97.227.239)&#39; can&#39;t be established.</code><br><code>RSA key fingerprint is ***********************为了保密就不显示了</code><br><code>Are you sure you want to continue connecting (yes/no)?</code><br>输入yes<br><code>Hi &lt;em&gt;username&lt;/em&gt;! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code><br>现在你就已经配置好，成功通过ssh连接到Github了！<br>PS：这里我说一下我遇到的问题吧，我在配置ssh的时候遇到了permission denied的问题<br>我当初问了需要获取权限，我是右键设置ssh key属性，以管理员身份访问，但还是不行，我就重新获取了密钥，好吧是中文输入法的问题，所以大家记得一定得全程英文输入法哦！</p>
+<h2 id="现在你可以安装Hexo了"><a href="#现在你可以安装Hexo了" class="headerlink" title="现在你可以安装Hexo了"></a>现在你可以安装Hexo了</h2><p><a href="https://hexo.io/docs/index.html" target="_blank" rel="external">关于Hexo</a><br>在git bash输入以下命令<br><code>$ npm install -g hexo</code></p>
+<h2 id="部署Hexo"><a href="#部署Hexo" class="headerlink" title="部署Hexo"></a>部署Hexo</h2><p>在你的电脑某个磁盘下创建一个名叫Hexo的文件夹，打开，右键打开Git Bash<br>键入以下命令<br><code>$ hexo init</code><br>    <strong>我在这里说一下，$是本来就有的，不是打上去的，不要在自己输入一遍了，好像真有这么做的人啊</strong><br><code>$ cd 安装路径</code><br><code>$ npm install</code><br><code>$ hexo generate</code><br><code>$ hexo server</code><br>    好了，可以 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 了，这就是hexo默认的主题啦，你可以下载主题然后在<code>_config.yml</code>里面更改theme哦。</p>
+<p>##如何下载一个主题<br><code>$ git clone 主题地址</code> 官方提供的几个主题，可以去下载<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">theme</a><br>或者是自己制作一个主题，请看我的另一篇博文的教程<a href="https://leafbaby.github.io/2016/10/11/How-To-Make-A-Theme/" target="_blank" rel="external">如何自己制作一个主题</a></p>
+<p>感谢一下网站    </p>
+<p><a href="https://www.v2ex.com/t/175940" target="_blank" rel="external">https://www.v2ex.com/t/175940</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;我是如何创建一个属于自己的博客的&quot;&gt;&lt;a href=&quot;#我是如何创建一个属于自己的博客的&quot; class=&quot;headerlink&quot; title=&quot;我是如何创建一个属于自己的博客的&quot;&gt;&lt;/a&gt;我是如何创建一个属于自己的博客的&lt;/h1
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/10/10/hello-world/"/>
+    <id>http://yoursite.com/2016/10/10/hello-world/</id>
+    <published>2016-10-10T06:51:48.615Z</published>
+    <updated>2016-10-11T00:16:52.701Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
