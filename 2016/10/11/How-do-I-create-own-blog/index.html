@@ -15,7 +15,7 @@ OK,开始搭建自己的博客吧！1.首先你得有自己的github，去注册
 OK,开始搭建自己的博客吧！1.首先你得有自己的github，去注册一个吧！github2.我们要使用Github Pages搭建博客，具体操作3.配置SSH Keys，打开git">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw690/86ef75e8jw1f8o3o3ek7fj20hj0e8t96.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/mw690/86ef75e8jw1f8o4xf5evdj20fb0ao74a.jpg">
-<meta property="og:updated_time" content="2016-10-12T02:27:05.491Z">
+<meta property="og:updated_time" content="2016-11-09T08:51:28.003Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How do I create own blog">
 <meta name="twitter:description" content="我是如何创建一个属于自己的博客的首先是你需要下载的工具PS：如果下载过慢就自己翻墙吧git下载: gitNode.js下载: Node.jssublime: sublime别的编辑器也可以，例如在线编辑器MaHua
@@ -95,17 +95,16 @@ OK,开始搭建自己的博客吧！1.首先你得有自己的github，去注册
       
         <a id="more"></a>
 <h1 id="我是如何创建一个属于自己的博客的"><a href="#我是如何创建一个属于自己的博客的" class="headerlink" title="我是如何创建一个属于自己的博客的"></a>我是如何创建一个属于自己的博客的</h1><h2 id="首先是你需要下载的工具"><a href="#首先是你需要下载的工具" class="headerlink" title="首先是你需要下载的工具"></a>首先是你需要下载的工具</h2><p>PS：如果下载过慢就自己翻墙吧<br>git下载: <a href="https://git-scm.com/download/" target="_blank" rel="external">git</a><br>Node.js下载: <a href="http://nodejs.cn/" target="_blank" rel="external">Node.js</a><br>sublime: <a href="http://www.sublimetext.com/2" target="_blank" rel="external">sublime</a><br>别的编辑器也可以，例如在线编辑器<a href="http://mahua.jser.me/" target="_blank" rel="external">MaHua</a></p>
-<h2 id="OK-开始搭建自己的博客吧！"><a href="#OK-开始搭建自己的博客吧！" class="headerlink" title="OK,开始搭建自己的博客吧！"></a>OK,开始搭建自己的博客吧！</h2><p>1.首先你得有自己的github，去注册一个吧！<a href="https://github.com/" target="_blank" rel="external">github</a><br>2.我们要使用Github Pages搭建博客，具体操作<br><img src="http://ww1.sinaimg.cn/mw690/86ef75e8jw1f8o3o3ek7fj20hj0e8t96.jpg" alt="image"><br>3.配置SSH Keys，打开git Bash工具<br>首先检查一下你有木有ssh key<code>$ cd ~/. ssh</code><br>如果不显示什么，证明你之前已经存在key文件，你需要备份删除<br><code>$ ls</code><br><code>$ mkdir key_backup</code><br><code>$ cp id_rsa* key_backup</code><br><code>$ rm id_rsa*</code><br>如果显示“No such file or directory”证明你没有，需要生成一个<br><code>$ ssh-keygen -t rsa -C &quot;自己的邮箱地址，例如 xx@163.com &quot;</code><br><code>Generating public/private rsa key pair.</code><br><code>Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):</code><br>这里他问你ssh密钥保存的路径，直接回车就行<br><code>Enter passphrase (empty for no passphrase):&lt;输入密码&gt;</code><br><code>Enter same passphrase again:&lt;再次输入密码&gt;</code><br><strong>密码一定要记住，而且输入密码不会显示星号哦</strong><br>4.把生成的ssh key添加到Github上去，我添加的公钥<br>具体操作 Settings–Deploy keys–Add deploy key<br>那个ssh key在C盘的User目录下，每个人的存储路径不一样，直接搜索 id_rsa.pub 文件就行<br>用编辑器打开这个文件，复制这里面的内容到key文本框<br><img src="http://ww3.sinaimg.cn/mw690/86ef75e8jw1f8o4xf5evdj20fb0ao74a.jpg" alt="dep"><br>5.现在可以测试了<br><code>$ ssh -T git@github.com</code><br><code>The authenticity of host &#39;github.com (207.97.227.239)&#39; can&#39;t be established.</code><br><code>RSA key fingerprint is ***********************为了保密就不显示了</code><br><code>Are you sure you want to continue connecting (yes/no)?</code><br>输入yes<br><code>Hi &lt;em&gt;username&lt;/em&gt;! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code><br>现在你就已经配置好，成功通过ssh连接到Github了！<br>PS：这里我说一下我遇到的问题吧，我在配置ssh的时候遇到了permission denied的问题<br>我当初问了需要获取权限，我是右键设置ssh key属性，以管理员身份访问，但还是不行，我就重新获取了密钥，好吧是中文输入法的问题，所以大家记得一定得全程英文输入法哦！</p>
+<h2 id="OK-开始搭建自己的博客吧！"><a href="#OK-开始搭建自己的博客吧！" class="headerlink" title="OK,开始搭建自己的博客吧！"></a>OK,开始搭建自己的博客吧！</h2><p>1.首先你得有自己的github，去注册一个吧！<a href="https://github.com/" target="_blank" rel="external">github</a><br>2.我们要使用Github Pages搭建博客，具体操作<br><img src="http://ww1.sinaimg.cn/mw690/86ef75e8jw1f8o3o3ek7fj20hj0e8t96.jpg" alt="image"><br>3.配置SSH Keys，打开git Bash工具<br>首先检查一下你有木有ssh key<code>$ cd ~/. ssh</code><br>如果不显示什么，证明你之前已经存在key文件，你需要备份删除<br><code>$ ls</code><br><code>$ mkdir key_backup</code><br><code>$ cp id_rsa* key_backup</code><br><code>$ rm id_rsa*</code><br>如果显示“No such file or directory”证明你没有，需要生成一个<br><code>$ ssh-keygen -t rsa -C &quot;自己的邮箱地址，例如 xx@163.com &quot;</code><br><code>Generating public/private rsa key pair.</code><br><code>Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):</code><br>这里他问你ssh密钥保存的路径，直接回车就行<br><code>Enter passphrase (empty for no passphrase):&lt;输入密码&gt;</code><br><code>Enter same passphrase again:&lt;再次输入密码&gt;</code><br><strong>密码一定要记住，而且输入密码不会显示星号哦</strong><br>4.把生成的ssh key添加到Github上去，我添加的公钥<br>具体操作 Settings–Deploy keys–Add deploy key<br>那个ssh key在C盘的User目录下，每个人的存储路径不一样，直接搜索 id_rsa.pub 文件就行<br>用编辑器打开这个文件，复制这里面的内容到key文本框<br><img src="http://ww3.sinaimg.cn/mw690/86ef75e8jw1f8o4xf5evdj20fb0ao74a.jpg" alt="dep"><br>5.现在可以测试了<br><code>$ ssh -T git@github.com</code><br><code>The authenticity of host &#39;github.com (207.97.227.239)&#39; can&#39;t be established.</code><br><code>RSA key fingerprint is ***********************为了保密就不显示了</code><br><code>Are you sure you want to continue connecting (yes/no)?</code><br>输入yes<br><code>Hi &lt;em&gt;username&lt;/em&gt;! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code><br>现在你就已经配置好，成功通过ssh连接到Github了！<br>PS：这里我说一下我遇到的问题吧，我在配置ssh的时候遇到了permission denied的问题<br>我当初问了需要获取权限，我是右键设置ssh key属性，以管理员身份访问，但还是不行，我就重新获取了密钥，好吧，最后其实是中文输入法的问题，所以大家记得一定得全程英文输入法哦！</p>
 <h2 id="现在你可以安装Hexo了"><a href="#现在你可以安装Hexo了" class="headerlink" title="现在你可以安装Hexo了"></a>现在你可以安装Hexo了</h2><p><a href="https://hexo.io/docs/index.html" target="_blank" rel="external">关于Hexo</a><br>在git bash输入以下命令<br><code>$ npm install -g hexo</code></p>
 <h2 id="部署Hexo"><a href="#部署Hexo" class="headerlink" title="部署Hexo"></a>部署Hexo</h2><p>在你的电脑某个磁盘下创建一个名叫Hexo的文件夹，打开，右键打开Git Bash<br>键入以下命令<br><code>$ hexo init</code><br>    <strong>我在这里说一下，$是本来就有的，不是打上去的，不要在自己输入一遍了，好像真有这么做的人啊</strong><br><code>$ cd 安装路径</code><br><code>$ npm install</code><br><code>$ hexo generate</code><br><code>$ hexo server</code><br>    好了，可以 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 了，这就是hexo默认的主题啦，你可以下载主题然后在<code>_config.yml</code>里面更改theme哦。</p>
 <p>##如何下载一个主题<br><code>$ git clone 主题地址</code> 官方提供的几个主题，可以去下载<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">theme</a><br>或者是自己制作一个主题，请看我的另一篇博文的教程<a href="https://leafbaby.github.io/2016/10/11/How-To-Make-A-Theme/" target="_blank" rel="external">如何自己制作一个主题</a></p>
-<p>感谢一下网站    </p>
-<p><a href="https://www.v2ex.com/t/175940" target="_blank" rel="external">https://www.v2ex.com/t/175940</a></p>
+<p>此教程出自多个网上资料，由于看的太多，记不太清，在此就不一一艾特了，转载也不必注明出处，反正不是我的原创，现在的资源和教程都很多，就是个互相学习，互相借鉴的过程。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/11/How-do-I-create-own-blog/" data-id="ciu7zj4cy0001qouzkztmydty" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/11/How-do-I-create-own-blog/" data-id="civvszcsv00049suzjm7w35v8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -165,7 +164,7 @@ var duoshuoQuery = {short_name:"leafbaby"};
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
     </div>
   </div>
 
@@ -178,6 +177,14 @@ var duoshuoQuery = {short_name:"leafbaby"};
       <ul>
         
           <li>
+            <a href="/2016/11/24/关于在SSM框架搭建上自己给自己挖的一些坑的处理/">关于在SSM框架搭建上自己给自己挖的一些坑的处理</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/SSM仓库管理开发/">SSM仓库管理开发</a>
+          </li>
+        
+          <li>
             <a href="/2016/10/13/关于微博秀引出的http问题/">关于微博秀引出的http问题</a>
           </li>
         
@@ -187,14 +194,6 @@ var duoshuoQuery = {short_name:"leafbaby"};
         
           <li>
             <a href="/2016/10/11/How-To-Make-A-Theme/">How To Make A Theme</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/11/How-do-I-create-own-blog/">How do I create own blog</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/10/hello-world/">Hello World</a>
           </li>
         
       </ul>

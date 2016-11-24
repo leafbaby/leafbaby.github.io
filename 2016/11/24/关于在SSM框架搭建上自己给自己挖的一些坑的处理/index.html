@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>关于在SSM框架搭建上自己给自己挖的一些坑的处理 | Leafbaby</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="我来给我的博客除草在学过一些东西之后总要做一些总结，以便于接下来的学习JDK版本不匹配问题话说接触SSM也有一段时间了，不过一直没有自己完完整整搭建过一个项目，昨天给自己挖了大坑，搭建了一天，遇见各种问题，不过也让我涨了不少见识，关于tomcat还有那么多东西，涨姿势了。接下来就说说我遇到的坑，其实最基本就是自己作死啊，首先是我先导了一个项目进来，遇见了JDK版本不匹配的问题，是这样：我本机的JD">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于在SSM框架搭建上自己给自己挖的一些坑的处理">
+<meta property="og:url" content="http://yoursite.com/2016/11/24/关于在SSM框架搭建上自己给自己挖的一些坑的处理/index.html">
+<meta property="og:site_name" content="Leafbaby">
+<meta property="og:description" content="我来给我的博客除草在学过一些东西之后总要做一些总结，以便于接下来的学习JDK版本不匹配问题话说接触SSM也有一段时间了，不过一直没有自己完完整整搭建过一个项目，昨天给自己挖了大坑，搭建了一天，遇见各种问题，不过也让我涨了不少见识，关于tomcat还有那么多东西，涨姿势了。接下来就说说我遇到的坑，其实最基本就是自己作死啊，首先是我先导了一个项目进来，遇见了JDK版本不匹配的问题，是这样：我本机的JD">
+<meta property="og:updated_time" content="2016-11-24T04:27:23.813Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于在SSM框架搭建上自己给自己挖的一些坑的处理">
+<meta name="twitter:description" content="我来给我的博客除草在学过一些东西之后总要做一些总结，以便于接下来的学习JDK版本不匹配问题话说接触SSM也有一段时间了，不过一直没有自己完完整整搭建过一个项目，昨天给自己挖了大坑，搭建了一天，遇见各种问题，不过也让我涨了不少见识，关于tomcat还有那么多东西，涨姿势了。接下来就说说我遇到的坑，其实最基本就是自己作死啊，首先是我先导了一个项目进来，遇见了JDK版本不匹配的问题，是这样：我本机的JD">
+  
+    <link rel="alternate" href="/atom.xml" title="Leafbaby" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Leafbaby</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+	  
+
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-关于在SSM框架搭建上自己给自己挖的一些坑的处理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/24/关于在SSM框架搭建上自己给自己挖的一些坑的处理/" class="article-date">
+  <time datetime="2016-11-24T02:12:16.000Z" itemprop="datePublished">2016-11-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于在SSM框架搭建上自己给自己挖的一些坑的处理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="我来给我的博客除草"><a href="#我来给我的博客除草" class="headerlink" title="我来给我的博客除草"></a>我来给我的博客除草</h4><h3 id="在学过一些东西之后总要做一些总结，以便于接下来的学习"><a href="#在学过一些东西之后总要做一些总结，以便于接下来的学习" class="headerlink" title="在学过一些东西之后总要做一些总结，以便于接下来的学习"></a>在学过一些东西之后总要做一些总结，以便于接下来的学习</h3><h2 id="JDK版本不匹配问题"><a href="#JDK版本不匹配问题" class="headerlink" title="JDK版本不匹配问题"></a>JDK版本不匹配问题</h2><p>话说接触SSM也有一段时间了，不过一直没有自己完完整整搭建过一个项目，昨天给自己挖了大坑，搭建了一天，遇见各种问题，不过也让我涨了不少见识，关于tomcat还有那么多东西，涨姿势了。<br>接下来就说说我遇到的坑，其实最基本就是自己作死啊，首先是我先导了一个项目进来，遇见了JDK版本不匹配的问题，是这样：<br>我本机的JDK是1.7，然后那个项目是拿1.6写的，我调了很久也没有弄好，后来JDK换了个版本依然不好使，最后无奈放弃了，其实原理是这样<br>首先那个项目是拿eclipse写的，所以我的myeclipse搞不定，要是出现只有JDK版本的问题，那么就可以用再下载一个JDK1.6，然后再在Myeclipse里面改一下JDK路径，jre就好了，如果还不行，可以在环境变量里面改，我的环境变量是按照JAVA_HOME这样配置的，所以path虽说只有一个，但是JAVA_HOME可以有多个呀，这样修改就行<br>还有一个比较麻烦的方法：把该项目的文件一个个复制到你新建的项目中，记得看清楚，一定要会修改配置文件！</p>
+<h2 id="maven也是大坑"><a href="#maven也是大坑" class="headerlink" title="maven也是大坑"></a>maven也是大坑</h2><p>话说我之前都是在IDEA 上用的maven，没想到这玩意到了Myeclipse上面这么坑，还和tomcat7不相容，所以我再一次悲剧了，下载了tomcat连接maven的插件，其实啊，阿帕奇的东西还是很好用的，但是让它自己下载实在太慢，所以我是直接在tomcat的setting文件里面修改的，加了插件，然后去maven的settings里面修改<br>maven还是配合Myeclipse2014版和tomcat8使用吧，不然真的是大坑！<br>综上所述，不要随便导很复杂的项目进来，以免你一脸懵逼还不知道怎么处理</p>
+<h2 id="自己动手搭建一个SSM框架"><a href="#自己动手搭建一个SSM框架" class="headerlink" title="自己动手搭建一个SSM框架"></a>自己动手搭建一个SSM框架</h2><pre><code>这玩意不是太难，网上有现成的，可以作为参考，但不要照搬
+</code></pre><p>首先建一个web project，在lib里引入要用到的jar，百度有很多，都引进来就行<br>1.src里，里面新建几个包，分别放你的实体类（Model），接口文件（Dao或者Mapper）和XML文件，service（处理业务逻辑），还有控制器就是路由（Controller）<br>2.然后你就可以建一个数据库，放个测试表<br>3.写实体类文件，并生成getter，setter方法<br>4.写接口文件，里面这样写<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List&lt;实体类名&gt; 方法名();</div></pre></td></tr></table></figure></p>
+<p>5.修改XML文件，比如你要实现数据查询功能</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; </div><div class="line">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</div><div class="line">&lt;mapper namespace=&quot;com.mapper.UserMapper&quot;&gt;</div><div class="line">	&lt;!-- 解决表名与字段不匹配 --&gt;</div><div class="line">	&lt;resultMap type=&quot;User&quot; id=&quot;userResultMap&quot;&gt;</div><div class="line">		&lt;id property=&quot;id&quot; column=&quot;id&quot;/&gt;</div><div class="line">		&lt;result property=&quot;username&quot; column=&quot;username&quot;/&gt;</div><div class="line">	&lt;/resultMap&gt;</div><div class="line"></div><div class="line">	&lt;select id=&quot;findAll&quot; resultMap=&quot;userResultMap&quot; resultType=&quot;User&quot;&gt;</div><div class="line">		select * from d_user</div><div class="line">	&lt;/select&gt;</div><div class="line">	/* id只要和接口的方法名一样就行，User是实体类，</div><div class="line">&lt;/mapper&gt;</div></pre></td></tr></table></figure>
+<p>这里其实建议大家去看一下XML的教程，很有必要<br>关于MyBatis的一些问题：<br>select映射<br>resultMap，MyBatis里的查询结果存放在Map键值对里（其中键是属性名，值则是其对应的值），MyBatis的每一个查询映射的返回类型都是ResultMap<br>它的用法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;resultMap id=&quot;userResultMap&quot; type=&quot;你需要映射的JAVA类&quot;&gt;</div><div class="line"> &lt;id property=&quot;Java类中的变量名&quot; column=&quot;数据库字段名&quot; /&gt;</div><div class="line"> &lt;result property=&quot;Java类中的变量名&quot; column=&quot;数据库字段名&quot;/&gt;</div><div class="line"> &lt;result property=&quot;Java类中的变量名&quot; column=&quot;数据库字段名&quot;/&gt;</div><div class="line"> &lt;result property=&quot;Java类中的变量名&quot; column=&quot;数据库字段名&quot;/&gt;</div><div class="line">&lt;/resultMap&gt;</div></pre></td></tr></table></figure></p>
+<p>6.该写service了，这里这个包里再建一个包impl<br>在Service里先定义一个接口，方法体和Mapper一样，impl里面一个类implement 这个Service<br>impl里要用到注解，注解这玩意真的是ssm的一大好处，真的好方便呀<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">@Service</div><div class="line">@Transactional</div><div class="line">public class UserServiceImpl implements UserService&#123;   </div><div class="line">    @Resource</div><div class="line">    public UserMapper userMapper;</div><div class="line">    @Override</div><div class="line">    public List&lt;User&gt; findAll() &#123;</div><div class="line">        // TODO Auto-generated method stub</div><div class="line">        List&lt;User&gt; findAll = userMapper.findAll();</div><div class="line">        return findAll;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>7.Controller<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@Controller</div><div class="line">@RequestMapping(&quot;/user&quot;)</div><div class="line">public class UserController &#123;</div><div class="line">	</div><div class="line">	@Autowired</div><div class="line">	private UserService userService;</div><div class="line">	</div><div class="line">	@RequestMapping(&quot;/findAll&quot;)</div><div class="line">	public String findAll(HttpServletRequest request)&#123;</div><div class="line">		List&lt;User&gt; list =  userService.findAll();</div><div class="line">		request.setAttribute(&quot;list&quot;, list);</div><div class="line">		return &quot;/Userlist&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>8.引入配置文件，自己去百度，数据库的相关信息换成自己的就行，注释都说得很明白<br>9.修改web.xml文件，我是根据我们公司的修改的<br>10.写jsp文件，可以用表单</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/24/关于在SSM框架搭建上自己给自己挖的一些坑的处理/" data-id="civvszcs100019suzglulk33q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/03/SSM仓库管理开发/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">SSM仓库管理开发</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/11/24/关于在SSM框架搭建上自己给自己挖的一些坑的处理/" data-title="关于在SSM框架搭建上自己给自己挖的一些坑的处理" data-url="http://yoursite.com/2016/11/24/关于在SSM框架搭建上自己给自己挖的一些坑的处理/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"leafbaby"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end --></section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/11/24/关于在SSM框架搭建上自己给自己挖的一些坑的处理/">关于在SSM框架搭建上自己给自己挖的一些坑的处理</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/SSM仓库管理开发/">SSM仓库管理开发</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/13/关于微博秀引出的http问题/">关于微博秀引出的http问题</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/12/这只是测试/">测试HTML代码</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/11/How-To-Make-A-Theme/">How To Make A Theme</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Weibo show</h3>
+    <div class="widget-weibo">
+      <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="https://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=2&isTitle=1&noborder=0&isWeibo=1&isFans=0&uid=2263840232&verifier=e6ddd29a&colors=dddddd,dddddd,666666,0082cb,dddddd&dpc=1"></iframe>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+	<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+	<span id="busuanzi_container_site_uv">
+  &nbsp;&nbsp;感谢访问，您是本站的第<span id="busuanzi_value_site_uv"></span>位访客！
+   </span>
+
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

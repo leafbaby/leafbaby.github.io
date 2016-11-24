@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>SSM仓库管理开发 | Leafbaby</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一些基本环境搭建　　初次到这个新的项目组，用的开发工具都和以前不一样，所以安装环境整我来着，这个项目大概就是用ＳＳＭ搞定一个仓库管理后台，前端是Ｃ＃，ｗｅｂ
+首先是要用到的工具：1.Ｊａｖａ必备JDK，Oracle官网下载去吧，我用的1.7，因为要和项目组同步2.开发工具：IntelliJIDEA，这个东西以前觉得用不明白，就用了eclipse，后来也是来这里就用了这个，感觉还不错3.辅助工具：A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSM仓库管理开发">
+<meta property="og:url" content="http://yoursite.com/2016/11/03/SSM仓库管理开发/index.html">
+<meta property="og:site_name" content="Leafbaby">
+<meta property="og:description" content="一些基本环境搭建　　初次到这个新的项目组，用的开发工具都和以前不一样，所以安装环境整我来着，这个项目大概就是用ＳＳＭ搞定一个仓库管理后台，前端是Ｃ＃，ｗｅｂ
+首先是要用到的工具：1.Ｊａｖａ必备JDK，Oracle官网下载去吧，我用的1.7，因为要和项目组同步2.开发工具：IntelliJIDEA，这个东西以前觉得用不明白，就用了eclipse，后来也是来这里就用了这个，感觉还不错3.辅助工具：A">
+<meta property="og:updated_time" content="2016-11-03T08:51:45.316Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SSM仓库管理开发">
+<meta name="twitter:description" content="一些基本环境搭建　　初次到这个新的项目组，用的开发工具都和以前不一样，所以安装环境整我来着，这个项目大概就是用ＳＳＭ搞定一个仓库管理后台，前端是Ｃ＃，ｗｅｂ
+首先是要用到的工具：1.Ｊａｖａ必备JDK，Oracle官网下载去吧，我用的1.7，因为要和项目组同步2.开发工具：IntelliJIDEA，这个东西以前觉得用不明白，就用了eclipse，后来也是来这里就用了这个，感觉还不错3.辅助工具：A">
+  
+    <link rel="alternate" href="/atom.xml" title="Leafbaby" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Leafbaby</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+	  
+
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-SSM仓库管理开发" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/03/SSM仓库管理开发/" class="article-date">
+  <time datetime="2016-11-03T07:07:02.000Z" itemprop="datePublished">2016-11-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SSM仓库管理开发
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一些基本环境搭建"><a href="#一些基本环境搭建" class="headerlink" title="一些基本环境搭建"></a>一些基本环境搭建</h2><p>　　初次到这个新的项目组，用的开发工具都和以前不一样，所以安装环境整我来着，这个项目大概就是用ＳＳＭ搞定一个仓库管理后台，前端是Ｃ＃，ｗｅｂ</p>
+<h3 id="首先是要用到的工具："><a href="#首先是要用到的工具：" class="headerlink" title="首先是要用到的工具："></a>首先是要用到的工具：</h3><p>1.Ｊａｖａ必备JDK，Oracle官网下载去吧，我用的1.7，因为要和项目组同步<br>2.开发工具：IntelliJIDEA，这个东西以前觉得用不明白，就用了eclipse，后来也是来这里就用了这个，感觉还不错<br>3.辅助工具：Apache的东西还是很不错的，Maven，svn，tomcat都需要<br>4.数据库，我们用的Oracle，还有一个可视化工具用PL或者别的都可以，我用的sqldeveloper<br>其实IDEA还可以用别的管理，git也很不错，但是我们这里还没有用git的，所以只有我自己在玩，苦啊，在论坛找个人准备合作，尽管我很菜，但也很想玩一个小东西<br>，目前就做好自己的一洗东西就行了，马上就要准备毕业设计了，所以有够忙的了，估计博客也会好长时间不上一次</p>
+<h2 id="spring浅认识"><a href="#spring浅认识" class="headerlink" title="spring浅认识"></a>spring浅认识</h2><p>spring传数据：controller→service→repository→DAO，就是这个顺序（今天新知道的），才发现自己这种连controller都没用过的菜鸡有多么弱，spring这种直接弄好的框架真是好方便的说<br>repository对应的是存储层bean，service对应业务层bean，controller对应展示层bean</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@RequestMapping(value = <span class="string">"/findMstr"</span>, method = RequestMethod.GET)</div><div class="line"> @ResponseBody</div><div class="line"> public Result findMstr(LgsSlNoticeMstr lgsSlNoticeMstr) &#123;</div><div class="line">     Result res = new Result();</div><div class="line">     List&lt;LgsSlNoticeMstr&gt; list = lgsSlNoticeMstrService.findMstr(lgsSlNoticeMstr);</div><div class="line">     <span class="keyword">if</span> (list.size() == 0 || list == null) &#123;</div><div class="line">         res.setObj5(list);</div><div class="line">         res.setReason(<span class="string">"无订单信息"</span>);</div><div class="line">         res.setFlag(<span class="literal">false</span>);</div><div class="line">     &#125; <span class="keyword">else</span> &#123;</div><div class="line">         res.setObj5(list);</div><div class="line">         res.setFlag(<span class="literal">true</span>);</div><div class="line">     &#125;</div><div class="line">     <span class="built_in">return</span> res;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<h2 id="做项目，顺便唠叨几句"><a href="#做项目，顺便唠叨几句" class="headerlink" title="做项目，顺便唠叨几句"></a>做项目，顺便唠叨几句</h2><p>我是直接用的正在做的项目，直接拿来看，其实JAVA 一直停在能写点简单的东西的水平上，一直也没有什么进步，说实话因为它出点错就运行不了，看不到效果，我还一度十分嫌弃它，但是现在，我不嫌弃他了，他有他独特的魅力，一直这么长时间屹立不倒，是有原因的，尽管也听了不少它会被替代的传言，我自己也在怀疑，但是他确实陪我很长时间，我大学真正做了的项目，没有一个是不用Java的，尽管我现在在努力自己写一个不用JAVA 的东西，但我还是个菜鸟，所以这个估计还是遥遥无期，但我的梦想、还是做前端啊，所以只有在工作之余努力了！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/03/SSM仓库管理开发/" data-id="civvszct900069suz994rk2tn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/11/24/关于在SSM框架搭建上自己给自己挖的一些坑的处理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          关于在SSM框架搭建上自己给自己挖的一些坑的处理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/13/关于微博秀引出的http问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关于微博秀引出的http问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/11/03/SSM仓库管理开发/" data-title="SSM仓库管理开发" data-url="http://yoursite.com/2016/11/03/SSM仓库管理开发/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"leafbaby"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end --></section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/11/24/关于在SSM框架搭建上自己给自己挖的一些坑的处理/">关于在SSM框架搭建上自己给自己挖的一些坑的处理</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/SSM仓库管理开发/">SSM仓库管理开发</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/13/关于微博秀引出的http问题/">关于微博秀引出的http问题</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/12/这只是测试/">测试HTML代码</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/11/How-To-Make-A-Theme/">How To Make A Theme</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Weibo show</h3>
+    <div class="widget-weibo">
+      <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="https://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=2&isTitle=1&noborder=0&isWeibo=1&isFans=0&uid=2263840232&verifier=e6ddd29a&colors=dddddd,dddddd,666666,0082cb,dddddd&dpc=1"></iframe>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+	<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+	<span id="busuanzi_container_site_uv">
+  &nbsp;&nbsp;感谢访问，您是本站的第<span id="busuanzi_value_site_uv"></span>位访客！
+   </span>
+
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

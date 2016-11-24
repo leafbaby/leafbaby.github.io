@@ -63,6 +63,123 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-关于在SSM框架搭建上自己给自己挖的一些坑的处理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/24/关于在SSM框架搭建上自己给自己挖的一些坑的处理/" class="article-date">
+  <time datetime="2016-11-24T02:12:16.000Z" itemprop="datePublished">2016-11-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/24/关于在SSM框架搭建上自己给自己挖的一些坑的处理/">关于在SSM框架搭建上自己给自己挖的一些坑的处理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="我来给我的博客除草"><a href="#我来给我的博客除草" class="headerlink" title="我来给我的博客除草"></a>我来给我的博客除草</h4><h3 id="在学过一些东西之后总要做一些总结，以便于接下来的学习"><a href="#在学过一些东西之后总要做一些总结，以便于接下来的学习" class="headerlink" title="在学过一些东西之后总要做一些总结，以便于接下来的学习"></a>在学过一些东西之后总要做一些总结，以便于接下来的学习</h3><h2 id="JDK版本不匹配问题"><a href="#JDK版本不匹配问题" class="headerlink" title="JDK版本不匹配问题"></a>JDK版本不匹配问题</h2><p>话说接触SSM也有一段时间了，不过一直没有自己完完整整搭建过一个项目，昨天给自己挖了大坑，搭建了一天，遇见各种问题，不过也让我涨了不少见识，关于tomcat还有那么多东西，涨姿势了。<br>接下来就说说我遇到的坑，其实最基本就是自己作死啊，首先是我先导了一个项目进来，遇见了JDK版本不匹配的问题，是这样：<br>我本机的JDK是1.7，然后那个项目是拿1.6写的，我调了很久也没有弄好，后来JDK换了个版本依然不好使，最后无奈放弃了，其实原理是这样<br>首先那个项目是拿eclipse写的，所以我的myeclipse搞不定，要是出现只有JDK版本的问题，那么就可以用再下载一个JDK1.6，然后再在Myeclipse里面改一下JDK路径，jre就好了，如果还不行，可以在环境变量里面改，我的环境变量是按照JAVA_HOME这样配置的，所以path虽说只有一个，但是JAVA_HOME可以有多个呀，这样修改就行<br>还有一个比较麻烦的方法：把该项目的文件一个个复制到你新建的项目中，记得看清楚，一定要会修改配置文件！</p>
+<h2 id="maven也是大坑"><a href="#maven也是大坑" class="headerlink" title="maven也是大坑"></a>maven也是大坑</h2><p>话说我之前都是在IDEA 上用的maven，没想到这玩意到了Myeclipse上面这么坑，还和tomcat7不相容，所以我再一次悲剧了，下载了tomcat连接maven的插件，其实啊，阿帕奇的东西还是很好用的，但是让它自己下载实在太慢，所以我是直接在tomcat的setting文件里面修改的，加了插件，然后去maven的settings里面修改<br>maven还是配合Myeclipse2014版和tomcat8使用吧，不然真的是大坑！<br>综上所述，不要随便导很复杂的项目进来，以免你一脸懵逼还不知道怎么处理</p>
+<h2 id="自己动手搭建一个SSM框架"><a href="#自己动手搭建一个SSM框架" class="headerlink" title="自己动手搭建一个SSM框架"></a>自己动手搭建一个SSM框架</h2><pre><code>这玩意不是太难，网上有现成的，可以作为参考，但不要照搬
+</code></pre><p>首先建一个web project，在lib里引入要用到的jar，百度有很多，都引进来就行<br>1.src里，里面新建几个包，分别放你的实体类（Model），接口文件（Dao或者Mapper）和XML文件，service（处理业务逻辑），还有控制器就是路由（Controller）<br>2.然后你就可以建一个数据库，放个测试表<br>3.写实体类文件，并生成getter，setter方法<br>4.写接口文件，里面这样写<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List&lt;实体类名&gt; 方法名();</div></pre></td></tr></table></figure></p>
+<p>5.修改XML文件，比如你要实现数据查询功能</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; </div><div class="line">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</div><div class="line">&lt;mapper namespace=&quot;com.mapper.UserMapper&quot;&gt;</div><div class="line">	&lt;!-- 解决表名与字段不匹配 --&gt;</div><div class="line">	&lt;resultMap type=&quot;User&quot; id=&quot;userResultMap&quot;&gt;</div><div class="line">		&lt;id property=&quot;id&quot; column=&quot;id&quot;/&gt;</div><div class="line">		&lt;result property=&quot;username&quot; column=&quot;username&quot;/&gt;</div><div class="line">	&lt;/resultMap&gt;</div><div class="line"></div><div class="line">	&lt;select id=&quot;findAll&quot; resultMap=&quot;userResultMap&quot; resultType=&quot;User&quot;&gt;</div><div class="line">		select * from d_user</div><div class="line">	&lt;/select&gt;</div><div class="line">	/* id只要和接口的方法名一样就行，User是实体类，</div><div class="line">&lt;/mapper&gt;</div></pre></td></tr></table></figure>
+<p>这里其实建议大家去看一下XML的教程，很有必要<br>关于MyBatis的一些问题：<br>select映射<br>resultMap，MyBatis里的查询结果存放在Map键值对里（其中键是属性名，值则是其对应的值），MyBatis的每一个查询映射的返回类型都是ResultMap<br>它的用法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;resultMap id=&quot;userResultMap&quot; type=&quot;你需要映射的JAVA类&quot;&gt;</div><div class="line"> &lt;id property=&quot;Java类中的变量名&quot; column=&quot;数据库字段名&quot; /&gt;</div><div class="line"> &lt;result property=&quot;Java类中的变量名&quot; column=&quot;数据库字段名&quot;/&gt;</div><div class="line"> &lt;result property=&quot;Java类中的变量名&quot; column=&quot;数据库字段名&quot;/&gt;</div><div class="line"> &lt;result property=&quot;Java类中的变量名&quot; column=&quot;数据库字段名&quot;/&gt;</div><div class="line">&lt;/resultMap&gt;</div></pre></td></tr></table></figure></p>
+<p>6.该写service了，这里这个包里再建一个包impl<br>在Service里先定义一个接口，方法体和Mapper一样，impl里面一个类implement 这个Service<br>impl里要用到注解，注解这玩意真的是ssm的一大好处，真的好方便呀<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">@Service</div><div class="line">@Transactional</div><div class="line">public class UserServiceImpl implements UserService&#123;   </div><div class="line">    @Resource</div><div class="line">    public UserMapper userMapper;</div><div class="line">    @Override</div><div class="line">    public List&lt;User&gt; findAll() &#123;</div><div class="line">        // TODO Auto-generated method stub</div><div class="line">        List&lt;User&gt; findAll = userMapper.findAll();</div><div class="line">        return findAll;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>7.Controller<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@Controller</div><div class="line">@RequestMapping(&quot;/user&quot;)</div><div class="line">public class UserController &#123;</div><div class="line">	</div><div class="line">	@Autowired</div><div class="line">	private UserService userService;</div><div class="line">	</div><div class="line">	@RequestMapping(&quot;/findAll&quot;)</div><div class="line">	public String findAll(HttpServletRequest request)&#123;</div><div class="line">		List&lt;User&gt; list =  userService.findAll();</div><div class="line">		request.setAttribute(&quot;list&quot;, list);</div><div class="line">		return &quot;/Userlist&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>8.引入配置文件，自己去百度，数据库的相关信息换成自己的就行，注释都说得很明白<br>9.修改web.xml文件，我是根据我们公司的修改的<br>10.写jsp文件，可以用表单</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/24/关于在SSM框架搭建上自己给自己挖的一些坑的处理/" data-id="civvszcs100019suzglulk33q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/11/24/关于在SSM框架搭建上自己给自己挖的一些坑的处理/" data-title="关于在SSM框架搭建上自己给自己挖的一些坑的处理" data-url="http://yoursite.com/2016/11/24/关于在SSM框架搭建上自己给自己挖的一些坑的处理/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"leafbaby"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+  
+    <article id="post-SSM仓库管理开发" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/03/SSM仓库管理开发/" class="article-date">
+  <time datetime="2016-11-03T07:07:02.000Z" itemprop="datePublished">2016-11-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/03/SSM仓库管理开发/">SSM仓库管理开发</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一些基本环境搭建"><a href="#一些基本环境搭建" class="headerlink" title="一些基本环境搭建"></a>一些基本环境搭建</h2><p>　　初次到这个新的项目组，用的开发工具都和以前不一样，所以安装环境整我来着，这个项目大概就是用ＳＳＭ搞定一个仓库管理后台，前端是Ｃ＃，ｗｅｂ</p>
+<h3 id="首先是要用到的工具："><a href="#首先是要用到的工具：" class="headerlink" title="首先是要用到的工具："></a>首先是要用到的工具：</h3><p>1.Ｊａｖａ必备JDK，Oracle官网下载去吧，我用的1.7，因为要和项目组同步<br>2.开发工具：IntelliJIDEA，这个东西以前觉得用不明白，就用了eclipse，后来也是来这里就用了这个，感觉还不错<br>3.辅助工具：Apache的东西还是很不错的，Maven，svn，tomcat都需要<br>4.数据库，我们用的Oracle，还有一个可视化工具用PL或者别的都可以，我用的sqldeveloper<br>其实IDEA还可以用别的管理，git也很不错，但是我们这里还没有用git的，所以只有我自己在玩，苦啊，在论坛找个人准备合作，尽管我很菜，但也很想玩一个小东西<br>，目前就做好自己的一洗东西就行了，马上就要准备毕业设计了，所以有够忙的了，估计博客也会好长时间不上一次</p>
+<h2 id="spring浅认识"><a href="#spring浅认识" class="headerlink" title="spring浅认识"></a>spring浅认识</h2><p>spring传数据：controller→service→repository→DAO，就是这个顺序（今天新知道的），才发现自己这种连controller都没用过的菜鸡有多么弱，spring这种直接弄好的框架真是好方便的说<br>repository对应的是存储层bean，service对应业务层bean，controller对应展示层bean</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@RequestMapping(value = <span class="string">"/findMstr"</span>, method = RequestMethod.GET)</div><div class="line"> @ResponseBody</div><div class="line"> public Result findMstr(LgsSlNoticeMstr lgsSlNoticeMstr) &#123;</div><div class="line">     Result res = new Result();</div><div class="line">     List&lt;LgsSlNoticeMstr&gt; list = lgsSlNoticeMstrService.findMstr(lgsSlNoticeMstr);</div><div class="line">     <span class="keyword">if</span> (list.size() == 0 || list == null) &#123;</div><div class="line">         res.setObj5(list);</div><div class="line">         res.setReason(<span class="string">"无订单信息"</span>);</div><div class="line">         res.setFlag(<span class="literal">false</span>);</div><div class="line">     &#125; <span class="keyword">else</span> &#123;</div><div class="line">         res.setObj5(list);</div><div class="line">         res.setFlag(<span class="literal">true</span>);</div><div class="line">     &#125;</div><div class="line">     <span class="built_in">return</span> res;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<h2 id="做项目，顺便唠叨几句"><a href="#做项目，顺便唠叨几句" class="headerlink" title="做项目，顺便唠叨几句"></a>做项目，顺便唠叨几句</h2><p>我是直接用的正在做的项目，直接拿来看，其实JAVA 一直停在能写点简单的东西的水平上，一直也没有什么进步，说实话因为它出点错就运行不了，看不到效果，我还一度十分嫌弃它，但是现在，我不嫌弃他了，他有他独特的魅力，一直这么长时间屹立不倒，是有原因的，尽管也听了不少它会被替代的传言，我自己也在怀疑，但是他确实陪我很长时间，我大学真正做了的项目，没有一个是不用Java的，尽管我现在在努力自己写一个不用JAVA 的东西，但我还是个菜鸟，所以这个估计还是遥遥无期，但我的梦想、还是做前端啊，所以只有在工作之余努力了！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/03/SSM仓库管理开发/" data-id="civvszct900069suz994rk2tn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/11/03/SSM仓库管理开发/" data-title="SSM仓库管理开发" data-url="http://yoursite.com/2016/11/03/SSM仓库管理开发/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"leafbaby"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+  
     <article id="post-关于微博秀引出的http问题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/13/关于微博秀引出的http问题/" class="article-date">
@@ -85,11 +202,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="https是加密传输"><a href="#https是加密传输" class="headerlink" title="https是加密传输"></a>https是加密传输</h3><p>之前微博秀显示不出来是因为我的传输方式选择了http，所以不符合hexo加密传输才会报错，之前的配置文件 <code>config.yml</code>也是这样，github地址应该写https:才能部署成功</p>
+<h3 id="HTTPS和HTTP的区别"><a href="#HTTPS和HTTP的区别" class="headerlink" title="HTTPS和HTTP的区别"></a>HTTPS和HTTP的区别</h3><p>一、https协议需要到ca申请证书，一般免费证书很少，需要交费。</p>
+<p>二、http是超文本传输协议，信息是明文传输，https 则是具有安全性的ssl加密传输协议。</p>
+<p>三、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。</p>
+<p>四、http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/13/关于微博秀引出的http问题/" data-id="ciu7zj4cq0000qouz3gx82zq4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/13/关于微博秀引出的http问题/" data-id="civvszcs900029suzqpxumatz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -146,7 +268,7 @@ var duoshuoQuery = {short_name:"leafbaby"};
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/12/这只是测试/" data-id="ciu7zj4db0004qouz5y6fl1cz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/12/这只是测试/" data-id="civvszct400059suz9mvvu00j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -198,7 +320,7 @@ var duoshuoQuery = {short_name:"leafbaby"};
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/11/How-To-Make-A-Theme/" data-id="ciu7zj4d80003qouzwfhxa9m0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/11/How-To-Make-A-Theme/" data-id="civvszcrs00009suz6ed6wza5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -247,17 +369,16 @@ var duoshuoQuery = {short_name:"leafbaby"};
       
         <a id="more"></a>
 <h1 id="我是如何创建一个属于自己的博客的"><a href="#我是如何创建一个属于自己的博客的" class="headerlink" title="我是如何创建一个属于自己的博客的"></a>我是如何创建一个属于自己的博客的</h1><h2 id="首先是你需要下载的工具"><a href="#首先是你需要下载的工具" class="headerlink" title="首先是你需要下载的工具"></a>首先是你需要下载的工具</h2><p>PS：如果下载过慢就自己翻墙吧<br>git下载: <a href="https://git-scm.com/download/" target="_blank" rel="external">git</a><br>Node.js下载: <a href="http://nodejs.cn/" target="_blank" rel="external">Node.js</a><br>sublime: <a href="http://www.sublimetext.com/2" target="_blank" rel="external">sublime</a><br>别的编辑器也可以，例如在线编辑器<a href="http://mahua.jser.me/" target="_blank" rel="external">MaHua</a></p>
-<h2 id="OK-开始搭建自己的博客吧！"><a href="#OK-开始搭建自己的博客吧！" class="headerlink" title="OK,开始搭建自己的博客吧！"></a>OK,开始搭建自己的博客吧！</h2><p>1.首先你得有自己的github，去注册一个吧！<a href="https://github.com/" target="_blank" rel="external">github</a><br>2.我们要使用Github Pages搭建博客，具体操作<br><img src="http://ww1.sinaimg.cn/mw690/86ef75e8jw1f8o3o3ek7fj20hj0e8t96.jpg" alt="image"><br>3.配置SSH Keys，打开git Bash工具<br>首先检查一下你有木有ssh key<code>$ cd ~/. ssh</code><br>如果不显示什么，证明你之前已经存在key文件，你需要备份删除<br><code>$ ls</code><br><code>$ mkdir key_backup</code><br><code>$ cp id_rsa* key_backup</code><br><code>$ rm id_rsa*</code><br>如果显示“No such file or directory”证明你没有，需要生成一个<br><code>$ ssh-keygen -t rsa -C &quot;自己的邮箱地址，例如 xx@163.com &quot;</code><br><code>Generating public/private rsa key pair.</code><br><code>Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):</code><br>这里他问你ssh密钥保存的路径，直接回车就行<br><code>Enter passphrase (empty for no passphrase):&lt;输入密码&gt;</code><br><code>Enter same passphrase again:&lt;再次输入密码&gt;</code><br><strong>密码一定要记住，而且输入密码不会显示星号哦</strong><br>4.把生成的ssh key添加到Github上去，我添加的公钥<br>具体操作 Settings–Deploy keys–Add deploy key<br>那个ssh key在C盘的User目录下，每个人的存储路径不一样，直接搜索 id_rsa.pub 文件就行<br>用编辑器打开这个文件，复制这里面的内容到key文本框<br><img src="http://ww3.sinaimg.cn/mw690/86ef75e8jw1f8o4xf5evdj20fb0ao74a.jpg" alt="dep"><br>5.现在可以测试了<br><code>$ ssh -T git@github.com</code><br><code>The authenticity of host &#39;github.com (207.97.227.239)&#39; can&#39;t be established.</code><br><code>RSA key fingerprint is ***********************为了保密就不显示了</code><br><code>Are you sure you want to continue connecting (yes/no)?</code><br>输入yes<br><code>Hi &lt;em&gt;username&lt;/em&gt;! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code><br>现在你就已经配置好，成功通过ssh连接到Github了！<br>PS：这里我说一下我遇到的问题吧，我在配置ssh的时候遇到了permission denied的问题<br>我当初问了需要获取权限，我是右键设置ssh key属性，以管理员身份访问，但还是不行，我就重新获取了密钥，好吧是中文输入法的问题，所以大家记得一定得全程英文输入法哦！</p>
+<h2 id="OK-开始搭建自己的博客吧！"><a href="#OK-开始搭建自己的博客吧！" class="headerlink" title="OK,开始搭建自己的博客吧！"></a>OK,开始搭建自己的博客吧！</h2><p>1.首先你得有自己的github，去注册一个吧！<a href="https://github.com/" target="_blank" rel="external">github</a><br>2.我们要使用Github Pages搭建博客，具体操作<br><img src="http://ww1.sinaimg.cn/mw690/86ef75e8jw1f8o3o3ek7fj20hj0e8t96.jpg" alt="image"><br>3.配置SSH Keys，打开git Bash工具<br>首先检查一下你有木有ssh key<code>$ cd ~/. ssh</code><br>如果不显示什么，证明你之前已经存在key文件，你需要备份删除<br><code>$ ls</code><br><code>$ mkdir key_backup</code><br><code>$ cp id_rsa* key_backup</code><br><code>$ rm id_rsa*</code><br>如果显示“No such file or directory”证明你没有，需要生成一个<br><code>$ ssh-keygen -t rsa -C &quot;自己的邮箱地址，例如 xx@163.com &quot;</code><br><code>Generating public/private rsa key pair.</code><br><code>Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):</code><br>这里他问你ssh密钥保存的路径，直接回车就行<br><code>Enter passphrase (empty for no passphrase):&lt;输入密码&gt;</code><br><code>Enter same passphrase again:&lt;再次输入密码&gt;</code><br><strong>密码一定要记住，而且输入密码不会显示星号哦</strong><br>4.把生成的ssh key添加到Github上去，我添加的公钥<br>具体操作 Settings–Deploy keys–Add deploy key<br>那个ssh key在C盘的User目录下，每个人的存储路径不一样，直接搜索 id_rsa.pub 文件就行<br>用编辑器打开这个文件，复制这里面的内容到key文本框<br><img src="http://ww3.sinaimg.cn/mw690/86ef75e8jw1f8o4xf5evdj20fb0ao74a.jpg" alt="dep"><br>5.现在可以测试了<br><code>$ ssh -T git@github.com</code><br><code>The authenticity of host &#39;github.com (207.97.227.239)&#39; can&#39;t be established.</code><br><code>RSA key fingerprint is ***********************为了保密就不显示了</code><br><code>Are you sure you want to continue connecting (yes/no)?</code><br>输入yes<br><code>Hi &lt;em&gt;username&lt;/em&gt;! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code><br>现在你就已经配置好，成功通过ssh连接到Github了！<br>PS：这里我说一下我遇到的问题吧，我在配置ssh的时候遇到了permission denied的问题<br>我当初问了需要获取权限，我是右键设置ssh key属性，以管理员身份访问，但还是不行，我就重新获取了密钥，好吧，最后其实是中文输入法的问题，所以大家记得一定得全程英文输入法哦！</p>
 <h2 id="现在你可以安装Hexo了"><a href="#现在你可以安装Hexo了" class="headerlink" title="现在你可以安装Hexo了"></a>现在你可以安装Hexo了</h2><p><a href="https://hexo.io/docs/index.html" target="_blank" rel="external">关于Hexo</a><br>在git bash输入以下命令<br><code>$ npm install -g hexo</code></p>
 <h2 id="部署Hexo"><a href="#部署Hexo" class="headerlink" title="部署Hexo"></a>部署Hexo</h2><p>在你的电脑某个磁盘下创建一个名叫Hexo的文件夹，打开，右键打开Git Bash<br>键入以下命令<br><code>$ hexo init</code><br>    <strong>我在这里说一下，$是本来就有的，不是打上去的，不要在自己输入一遍了，好像真有这么做的人啊</strong><br><code>$ cd 安装路径</code><br><code>$ npm install</code><br><code>$ hexo generate</code><br><code>$ hexo server</code><br>    好了，可以 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 了，这就是hexo默认的主题啦，你可以下载主题然后在<code>_config.yml</code>里面更改theme哦。</p>
 <p>##如何下载一个主题<br><code>$ git clone 主题地址</code> 官方提供的几个主题，可以去下载<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">theme</a><br>或者是自己制作一个主题，请看我的另一篇博文的教程<a href="https://leafbaby.github.io/2016/10/11/How-To-Make-A-Theme/" target="_blank" rel="external">如何自己制作一个主题</a></p>
-<p>感谢一下网站    </p>
-<p><a href="https://www.v2ex.com/t/175940" target="_blank" rel="external">https://www.v2ex.com/t/175940</a></p>
+<p>此教程出自多个网上资料，由于看的太多，记不太清，在此就不一一艾特了，转载也不必注明出处，反正不是我的原创，现在的资源和教程都很多，就是个互相学习，互相借鉴的过程。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/11/How-do-I-create-own-blog/" data-id="ciu7zj4cy0001qouzkztmydty" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/11/How-do-I-create-own-blog/" data-id="civvszcsv00049suzjm7w35v8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -317,7 +438,7 @@ var duoshuoQuery = {short_name:"leafbaby"};
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/10/hello-world/" data-id="ciu7zj4d30002qouzroysyj0d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/10/hello-world/" data-id="civvszcsd00039suz34vuj5y6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -359,7 +480,7 @@ var duoshuoQuery = {short_name:"leafbaby"};
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
     </div>
   </div>
 
@@ -372,6 +493,14 @@ var duoshuoQuery = {short_name:"leafbaby"};
       <ul>
         
           <li>
+            <a href="/2016/11/24/关于在SSM框架搭建上自己给自己挖的一些坑的处理/">关于在SSM框架搭建上自己给自己挖的一些坑的处理</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/SSM仓库管理开发/">SSM仓库管理开发</a>
+          </li>
+        
+          <li>
             <a href="/2016/10/13/关于微博秀引出的http问题/">关于微博秀引出的http问题</a>
           </li>
         
@@ -381,14 +510,6 @@ var duoshuoQuery = {short_name:"leafbaby"};
         
           <li>
             <a href="/2016/10/11/How-To-Make-A-Theme/">How To Make A Theme</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/11/How-do-I-create-own-blog/">How do I create own blog</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/10/hello-world/">Hello World</a>
           </li>
         
       </ul>

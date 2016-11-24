@@ -5,11 +5,56 @@
     
   <url>
     <loc>http://yoursite.com/2016/10/13/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%8D%9A%E7%A7%80%E5%BC%95%E5%87%BA%E7%9A%84http%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2016-10-13T03:06:55.175Z</lastmod>
+    <lastmod>2016-11-24T04:33:52.883Z</lastmod>
     <data>
         <display>
         <title>关于微博秀引出的http问题</title>
         <pubTime>2016-10-13T03:06:55.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/11/24/%E5%85%B3%E4%BA%8E%E5%9C%A8SSM%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%8A%E8%87%AA%E5%B7%B1%E7%BB%99%E8%87%AA%E5%B7%B1%E6%8C%96%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91%E7%9A%84%E5%A4%84%E7%90%86/</loc>
+    <lastmod>2016-11-24T04:27:23.813Z</lastmod>
+    <data>
+        <display>
+        <title>关于在SSM框架搭建上自己给自己挖的一些坑的处理</title>
+        <pubTime>2016-11-24T02:12:16.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/10/11/How-do-I-create-own-blog/</loc>
+    <lastmod>2016-11-09T08:51:28.003Z</lastmod>
+    <data>
+        <display>
+        <title>How do I create own blog</title>
+        <pubTime>2016-10-11T00:44:55.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/11/03/SSM%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2016-11-03T08:51:45.316Z</lastmod>
+    <data>
+        <display>
+        <title>SSM仓库管理开发</title>
+        <pubTime>2016-11-03T07:07:02.000Z</pubTime>
         
          
            
@@ -25,21 +70,6 @@
         <display>
         <title>测试HTML代码</title>
         <pubTime>2016-10-12T00:11:01.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/11/How-do-I-create-own-blog/</loc>
-    <lastmod>2016-10-12T02:27:05.491Z</lastmod>
-    <data>
-        <display>
-        <title>How do I create own blog</title>
-        <pubTime>2016-10-11T00:44:55.000Z</pubTime>
         
          
            
